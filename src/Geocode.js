@@ -1,8 +1,8 @@
-export default class DoctorFinder {
-  doctorQuery(doctorSearchUrl){
+export default class Geocode {
+  geocodeQuery(geocodeUrl){
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = doctorSearchUrl;
+      let url = geocodeUrl;
       request.onload = function() {
         if (this.status === 200){
           resolve(request.response);
