@@ -6,7 +6,7 @@
 
 ## Description
 
-This application will allow users to find a doctor in their area by inputting their medical issue.
+This application will allow users to find a doctor in their area by inputting their medical issue using the BetterDoctor API.
 
 ## Specs
 

@@ -11,11 +11,16 @@ $(document).ready(function() {
     let userQuery = $("input[name='query']").val();
     let doctorFinder = new DoctorFinder();
     let doctorSearchUrl = `https://api.betterdoctor.com/2016-03-01/doctors?user_key=${process.env.exports.apiKey}&query=${userQuery}`;
-    console.log(doctorSearchUrl);
     let promise = doctorFinder.doctorQuery(doctorSearchUrl);
 
     promise.then(function(response){
       let body = JSON.parse(response);
+
+      for(let i=0; i < body.data.length; i++) {
+        console.log(body.data[i].profile.first_name);
+        console.log(body.data[i].profile.last_name);
+        $(".results").append(`<h2>${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</h2>`);
+      }
     });
   });
 });
