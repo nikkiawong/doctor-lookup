@@ -11,7 +11,8 @@ $(document).ready(function() {
 
     let userAddress = $("input[name='address']").val();
     let userQuery = $("input[name='query']").val();
-    let distance = $("input[name='distance']").val();
+    let distance = $("option:selected").val();
+    console.log(distance);
 
     let geocode = new Geocode();
     let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${userAddress}&key=${process.env.exports.apiKey2}`;

@@ -11,11 +11,19 @@
     <form class="searchForm" action="index.html" method="post">
       <label for="query">I'm looking for:</label>
       <input type="text" name="query" value="">
-      <input type="text" name="distance" value="">
-      <label for="">miles from</label>
+      <label for="distance">within</label>
+      <select name="miles-sect">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+      </select>
+      <label for="">miles of</label>
       <input type="text" name="address" value="">
-      <p class="small-text">(zip code)</p>
-      <button type="submit" name="button" class="btn btn-warning">Submit</button>
+      <p class="small-text">(address, zip code or city)</p>
+      <button type="submit" name="button" class="btn btn-warning">Search</button>
     </form>
     <div class="results">
 

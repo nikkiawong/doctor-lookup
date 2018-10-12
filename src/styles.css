@@ -30,17 +30,25 @@ form {
   align-items: center;
 }
 
-input {
-  width: 30%;
+input, select {
   margin-bottom: 20px;
   text-align: center;
   height: 50px;
   font-size: 30px;
   border: 0;
+  background-color: transparent;
+}
+
+select {
+  width: 70px;
+}
+
+input {
+  width: 30%;
   border-bottom: 1px solid gray;
 }
 
-input:focus {
+input:focus, select:focus {
   outline: none;
 }
 
