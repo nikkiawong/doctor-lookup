@@ -79,7 +79,7 @@ $(document).ready(function() {
 
             $(`#doctor${i}`).click(function() {
               $(".viewed").show();
-              $(".recently-viewed").append(`<li>${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</li>`);
+              $(".recently-viewed").append(`<li><a href="#doctor${i}">${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</a></li>`);
               $("#expand").click(function() {
                 $(".recently-viewed").show();
                 $("#expand").hide();

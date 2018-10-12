@@ -29,17 +29,27 @@ body {
 }
 
 #expand {
-  color: #4286f4;
+  font-size: 12px;
+  color: gray;
 }
 
 #hide {
+  font-size: 12px;
   display: none;
-  color: #4286f4;
+  color: gray;
 }
 
 #expand:hover, #hide:hover {
   cursor: pointer;
-  color: gray;
+  color: #4286f4;
+}
+
+li > a {
+  color: black;
+}
+
+li > a:hover {
+  color: #4286f4;
 }
 
 ul {
