@@ -16,3 +16,19 @@ body {
 .doctor-info {
   display: none;
 }
+
+h1 {
+  margin-bottom: 30px;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+h5:hover {
+  cursor: pointer;
+}
+
+img {
+  margin-bottom: 10px;
+}
