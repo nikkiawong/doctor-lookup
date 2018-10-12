@@ -24,6 +24,24 @@ body {
   padding: 18px;
 }
 
+.recently-viewed {
+  display: none;
+}
+
+#expand {
+  color: #4286f4;
+}
+
+#hide {
+  display: none;
+  color: #4286f4;
+}
+
+#expand:hover, #hide:hover {
+  cursor: pointer;
+  color: gray;
+}
+
 ul {
   padding: 0;
   list-style-type: none;

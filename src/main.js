@@ -80,6 +80,16 @@ $(document).ready(function() {
             $(`#doctor${i}`).click(function() {
               $(".viewed").show();
               $(".recently-viewed").append(`<li>${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</li>`);
+              $("#expand").click(function() {
+                $(".recently-viewed").show();
+                $("#expand").hide();
+                $("#hide").show();
+              });
+              $("#hide").click(function() {
+                $(".recently-viewed").hide();
+                $("#hide").hide();
+                $("#expand").show();
+              });
             });
           }
         }
