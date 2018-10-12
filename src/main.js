@@ -11,6 +11,7 @@ $(document).ready(function() {
 
     let userAddress = $("input[name='address']").val();
     let userQuery = $("input[name='query']").val();
+    let distance = $("input[name='distance']").val();
 
     let geocode = new Geocode();
     let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${userAddress}&key=${process.env.exports.apiKey2}`;
@@ -22,7 +23,7 @@ $(document).ready(function() {
       let lng = geoBody.results[0].geometry.location.lng;
 
       let doctorFinder = new DoctorFinder();
-      let doctorSearchUrl = `https://api.betterdoctor.com/2016-03-01/doctors?location=${lat},${lng},10 &limit=100&user_key=${process.env.exports.apiKey}&query=${userQuery}`;
+      let doctorSearchUrl = `https://api.betterdoctor.com/2016-03-01/doctors?location=${lat},${lng},${distance}&limit=100&user_key=${process.env.exports.apiKey}&query=${userQuery}`;
       let promise = doctorFinder.doctorQuery(doctorSearchUrl);
 
       promise.then(function(response){
