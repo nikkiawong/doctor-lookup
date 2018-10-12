@@ -76,6 +76,11 @@ $(document).ready(function() {
 
             $(".results").append(`<div class="card" style="width: 35rem;" id="doctor${i}"><div class="card-body"><h5 class="card-title">${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</h5><div class="doctor-info" id="doctor-info-doctor${i}"><img src="${body.data[i].profile.image_url}"><p class="small-text">${body.data[i].profile.bio}</p><p>${body.data[i].practices[0].visit_address.street}</p><p>${street2}</p>
             <p>${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[0].practices[0].visit_address.zip}</p><p>${number}</p><p>${website}</p><p><span class='bold'>Accepts new patients?</span> ${acceptsPatients}</p></div></div></div>`);
+
+            $(`#doctor${i}`).click(function() {
+              $(".viewed").show();
+              $(".recently-viewed").append(`<li>${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</li>`);
+            });
           }
         }
 

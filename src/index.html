@@ -8,25 +8,33 @@
     <div class="jumbotron">
       <h1>Doctor Lookup</h1>
     </div>
-    <form class="searchForm" action="index.html" method="post">
-      <label for="query">I'm looking for:</label>
-      <input type="text" name="query" value="">
-      <label for="distance">within</label>
-      <select name="miles-sect">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="30">30</option>
-        <option value="50">50</option>
-      </select>
-      <label for="">miles of</label>
-      <input type="text" name="address" value="">
-      <p class="small-text">(address, zip code or city)</p>
-      <button type="submit" name="button" class="btn btn-warning">Search</button>
-    </form>
-    <div class="results">
-
+    <div class="main-body">
+      <form class="searchForm" action="index.html" method="post">
+        <label for="query">I'm looking for:</label>
+        <input type="text" name="query" value="">
+        <label for="distance">within</label>
+        <select name="miles-sect">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+        </select>
+        <label for="">miles of</label>
+        <input type="text" name="address" value="">
+        <p class="small-text">(address, zip code or city)</p>
+        <button type="submit" name="button" class="btn btn-warning">Search</button>
+      </form>
+      <div class="results">
+      </div>
+      <div class="viewed card">
+        <div class="viewed-body">
+          <h4>Recently Viewed</h4>
+          <ul class="recently-viewed">
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

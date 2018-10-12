@@ -9,6 +9,26 @@ body {
   margin-right: auto;
 }
 
+.main-body {
+  position: relative;
+}
+
+.viewed {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.viewed-body {
+  padding: 18px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 .bold {
   font-weight: bold;
 }
