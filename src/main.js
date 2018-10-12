@@ -28,7 +28,7 @@ $(document).ready(function() {
           if (body.data[i].practices[0].visit_address.street2 === undefined) {
             street2 = "";
           } else {
-            street2 = body.data[i].practices[0].visit_address.street2 + ", "
+            street2 = body.data[i].practices[0].visit_address.street2;
           }
 
           let website;
@@ -44,9 +44,11 @@ $(document).ready(function() {
           } else {
             acceptsPatients = "No";
           }
+          console.log(street2);
 
-          $(".results").append(`<h2>${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</h2><p>${body.data[i].practices[0].visit_address.street + ", " + street2 + body.data[i].practices[0].visit_address.city + ", " + body.data[i].practices[0].visit_address.state + " " + body.data[0].practices[0].visit_address.zip}</p><p>${body.data[i].practices[0].phones[0].number}</p><p>${website}</p><p><span class='bold'>Accepts new patients?</span> ${acceptsPatients}</p>`);
-      }
+          $(".results").append(`<div class="card" style="width: 35rem;"><div class="card-body"><h2 class="card-title">${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</h2><img src="${body.data[i].profile.image_url}"><p>${body.data[i].practices[0].visit_address.street}</p><p>${street2}</p>
+          <p>${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[0].practices[0].visit_address.zip}</p><p>${body.data[i].practices[0].phones[0].number}</p><p>${website}</p><p><span class='bold'>Accepts new patients?</span> ${acceptsPatients}</p></div></div>`);
+        }
 
       }
     });
