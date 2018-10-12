@@ -15,6 +15,7 @@ body {
 
 .doctor-info {
   display: none;
+  padding: 20px;
 }
 
 h1 {
@@ -23,6 +24,28 @@ h1 {
 
 form {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 50px;
+  font-size: 30px;
+  border: 0;
+  border-bottom: 1px solid gray;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100px;
 }
 
 h5:hover {
@@ -30,5 +53,9 @@ h5:hover {
 }
 
 img {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.bio {
+  font-size: 12px;
 }

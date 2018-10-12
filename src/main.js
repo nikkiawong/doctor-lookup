@@ -15,6 +15,7 @@ $(document).ready(function() {
 
     promise.then(function(response){
       let body = JSON.parse(response);
+      console.log(body);
 
       if (body.data.length === 0) {
         $(".results").html("");
@@ -44,7 +45,18 @@ $(document).ready(function() {
             acceptsPatients = "No";
           }
 
-          $(".results").append(`<div class="card" style="width: 35rem;" id="doctor${i}"><div class="card-body"><h5 class="card-title">${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</h5><div class="doctor-info" id="doctor-info-doctor${i}"><img src="${body.data[i].profile.image_url}"><p>${body.data[i].practices[0].visit_address.street}</p><p>${street2}</p>
+          let middleName;
+          if (body.data[i].profile.middle_name === undefined) {
+            middleName = "";
+          } else {
+            if (body.data[i].profile.middle_name.length < 2) {
+              middleName = " " + body.data[i].profile.middle_name + ".";
+            } else {
+              middleName = " " + body.data[i].profile.middle_name;
+            }
+          }
+
+          $(".results").append(`<div class="card" style="width: 35rem;" id="doctor${i}"><div class="card-body"><h5 class="card-title">${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</h5><div class="doctor-info" id="doctor-info-doctor${i}"><img src="${body.data[i].profile.image_url}"><p class="bio">${body.data[i].profile.bio}</p><p>${body.data[i].practices[0].visit_address.street}</p><p>${street2}</p>
           <p>${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[0].practices[0].visit_address.zip}</p><p>${body.data[i].practices[0].phones[0].number}</p><p>${website}</p><p><span class='bold'>Accepts new patients?</span> ${acceptsPatients}</p></div></div></div>`);
         }
 
