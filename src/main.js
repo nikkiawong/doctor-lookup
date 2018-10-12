@@ -12,7 +12,6 @@ $(document).ready(function() {
     let userAddress = $("input[name='address']").val();
     let userQuery = $("input[name='query']").val();
     let distance = $("option:selected").val();
-    console.log(distance);
 
     let geocode = new Geocode();
     let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${userAddress}&key=${process.env.exports.apiKey2}`;
@@ -24,7 +23,7 @@ $(document).ready(function() {
       let lng = geoBody.results[0].geometry.location.lng;
 
       let doctorFinder = new DoctorFinder();
-      let doctorSearchUrl = `https://api.betterdoctor.com/2016-03-01/doctors?location=${lat},${lng},${distance}&limit=100&user_key=${process.env.exports.apiKey}&query=${userQuery}`;
+      let doctorSearchUrl = `https://api.betterdoctor.com/2016-03-01/doctors?location=${lat},${lng},${distance}&sort=distance-desc&limit=100&user_key=${process.env.exports.apiKey}&query=${userQuery}`;
       let promise = doctorFinder.doctorQuery(doctorSearchUrl);
 
       promise.then(function(response){
@@ -72,7 +71,6 @@ $(document).ready(function() {
             $(".results").append(`<div class="card" style="width: 35rem;" id="doctor${i}"><div class="card-body"><h5 class="card-title">${body.data[i].profile.first_name}${middleName} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}</h5><div class="doctor-info" id="doctor-info-doctor${i}"><img src="${body.data[i].profile.image_url}"><p class="small-text">${body.data[i].profile.bio}</p><p>${body.data[i].practices[0].visit_address.street}</p><p>${street2}</p>
             <p>${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[0].practices[0].visit_address.zip}</p><p>${body.data[i].practices[0].phones[0].number}</p><p>${website}</p><p><span class='bold'>Accepts new patients?</span> ${acceptsPatients}</p></div></div></div>`);
           }
-
         }
 
         $(".card").hover(function() {
@@ -83,7 +81,5 @@ $(document).ready(function() {
         });
       });
     });
-
-
   });
 });
