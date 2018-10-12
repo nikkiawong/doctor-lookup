@@ -12,3 +12,7 @@ body {
 .bold {
   font-weight: bold;
 }
+
+.doctor-info {
+  display: none;
+}
