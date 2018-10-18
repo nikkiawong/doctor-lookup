@@ -25,6 +25,9 @@ This application will allow users to find a doctor in their area by inputting th
 * Run `npm install`
 * Run `npm run start`
 * Run `npm run test`
+* Create .env file
+  * exports.apiKey=[Better Doctor API Key]
+  * exports.apiKey2=[Google Maps API Key]
 
 ## Technologies Used
 
